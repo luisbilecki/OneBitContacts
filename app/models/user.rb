@@ -6,4 +6,7 @@ class User < ApplicationRecord
 
   # Devise simple token
   acts_as_token_authenticatable
+
+  # Relationships
+  has_many :contacts, dependent: :destroy
 end
