@@ -9,4 +9,5 @@ class User < ApplicationRecord
 
   # Relationships
   has_many :contacts, dependent: :destroy
+
 end

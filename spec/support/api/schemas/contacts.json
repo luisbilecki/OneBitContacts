@@ -1,0 +1,19 @@
+{
+ "type": "array",
+   "properties": {
+     "contact" : {
+       "required" : ["id", "name", "user"],
+       "properties" : {
+         "id" : { "type" : "integer" },
+         "name" : { "type" : "string" },
+         "email" : { "type" : "string" },
+         "phone" : { "type" : "string" },
+         "description" : { "type" : "string" },
+         "user_id" : { "type" : "integer" },
+         "created_at" : { "type" : "string", "format": "date-time" },
+         "updated_at" : { "type" : "string", "format": "date-time" },
+         "addresses" : { "type" : "array" }
+       }
+     }
+   }
+}
