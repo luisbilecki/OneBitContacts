@@ -6,12 +6,12 @@ class Api::V1::ContactsController < Api::V1::ApiController
   def index
     @contacts = current_user.contacts.page(params[:page])
 
-    render json: @contacts
+    render json: @contacts, include: [:addresses]
   end
 
   # GET /api/v1/contacts/1
   def show
-    render json: @contact
+    render json: @contact, include: [:addresses]
   end
 
   # POST /api/v1/contacts
@@ -19,7 +19,7 @@ class Api::V1::ContactsController < Api::V1::ApiController
     @contact = Contact.new(contact_params.merge(user: current_user))
 
     if @contact.save
-      render json: @contact, status: :created
+      render json: @contact, status: :created, include: [:addresses]
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class Api::V1::ContactsController < Api::V1::ApiController
   # PATCH/PUT /api/v1/contacts/1
   def update
     if @contact.update(contact_params)
-      render json: @contact
+      render json: @contact, include: [:addresses]
     else
       render json: @contact.errors, status: :unprocessable_entity
     end
