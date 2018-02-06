@@ -34,6 +34,9 @@ gem 'devise'
 # Simple (but safe) token authentication for Rails apps or API with Devise.
 gem 'simple_token_authentication', '~> 1.0'
 
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

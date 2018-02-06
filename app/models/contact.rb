@@ -4,4 +4,6 @@ class Contact < ApplicationRecord
   # Validations
   validates :name, :user, presence: true
 
+  # Kaminari configuration
+  paginates_per 10
 end
